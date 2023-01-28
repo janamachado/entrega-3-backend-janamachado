@@ -1,0 +1,29 @@
+openapi: 3.0.3
+info:
+  title: Documentação do Projeto Desafio Back End - Parsear Dados Cnab
+  version: 0.0.0
+  description: Esse projeto tem por objetivo o parseamento de dados através de um
+    upload de um arquivo CNAB, você fazer o upload e então a aplicação te levará para
+    a tela com as informações de seu arquivo
+paths:
+  /api/list/:
+    get:
+      operationId: api_list_retrieve
+      tags:
+      - api
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid
